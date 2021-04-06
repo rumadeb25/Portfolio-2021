@@ -32,7 +32,7 @@ header{
   padding: 2px;
   justify-content: center;
   text-align: center;
-  background-color: rgb(182, 182, 182);
+  background-color: rgba(182, 182, 182, 0.5);
 }
 
 .navigation ul li a:hover{
@@ -45,6 +45,7 @@ header{
   border: black;
   border-style: solid;
   color: white;
+  text-transform: uppercase;
 }
 
 #logo{
@@ -130,6 +131,7 @@ h1{
 
 h2, h3, h4{
   padding-left: 20px;
+  text-align: left;
 }
 
 p{
@@ -157,7 +159,7 @@ p{
   text-align: center;
 }
 
-.paint1 p, .deviate_content p, .activities_content{
+.intro p, .paint1 p, .deviate_content p, .activities_content{
   margin-bottom: 30px;
 }
 
@@ -192,23 +194,72 @@ footer p{
 
 @media screen and (min-width: 850px){
 
+nav{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 
-header{
-  background: #fff;
-  /* border-bottom: 3px solid #50C7C7; */
+.navigation ul{
   display:flex;
   flex-direction: row;
   align-items: center;
-  flex-wrap: wrap;
-  /* color: white; */
-  
+}
+
+.navigation ul li a{
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+
+@-webkit-keyframes logo_grow{
+0%{
+   margin-top: -30px;
+   opacity: 0; 
+}
+25%{
+  margin-top: -20px;
+}
+50%{
+  margin-top: -10px;
+}
+75%{
+  margin-top: -5px;
+}
+100%{
+  margin-top: 0px;
+   opacity: 1;
+}
+}
+
+@keyframes logo_grow{
+ /*Your code here.*/
+ 0%{
+  margin-top: -30px;
+  opacity: 0; 
+}
+25%{
+ margin-top: -20px;
+}
+50%{
+ margin-top: -10px;
+}
+75%{
+ margin-top: -5px;
+}
+100%{
+ margin-top: 0px;
+  opacity: 1;
+}
 }
 
 .logo img{
-  width: 8%;
-  margin-left: 10px;
+  width: 25%;
+  margin-left: 10%;
+  margin-top: 0px;
 }
-
 
 
 
@@ -230,25 +281,6 @@ header{
   padding-top: 0;
 }
 
-
-/* .food{
-  display: grid;
-  grid-template-columns: 200px 200px 200px;
-  grid-gap: 10px;
-}
-.food1{
-  grid-column: 1/2;
-}
-
-.food2{
-  grid-column: 2/3;
-}
-
-.food3{
-  grid-column: 3/4;
-}
-} */
-
 .food{
   display: flex;
   justify-content: center;
@@ -268,9 +300,9 @@ header{
   grid-gap: 10px;
 }
 
-.medlaunch1{
-  /* grid-column: 1/2; */
-}
+/* .medlaunch1{
+  /* grid-column: 1/2; 
+} */
 
 .medlaunch2{
   grid-column: 2/3;
@@ -309,22 +341,3 @@ header{
 }
 
 }
-
-
-
-
-
-
-
-/* 
-.bottom-left {
-  position: absolute;
-  bottom: 30px;
-  left: 30px;
-}
-
-.top-left {
-  position: absolute;
-  top: 8px;
-  left: 16px;
-} */

@@ -36,20 +36,32 @@
 
     <main>
         
-        <div> </div>
         <h1>Let's Connect.</h1>
 
         <div class="email_container">  
-          <form id="email" action="mailto:rumad@umich.edu" method="post">
+          <!-- <form id="email" action="https://formspree.io/f/mwkakoql" method="post">
             <fieldset>
-              <input placeholder="Name" type="text" required>
-            </fieldset>
-            <fieldset>
-              <input placeholder="Email address" type="email" required>
-            </fieldset>
-            <fieldset>
+              <label for="name">Your name:</label>
+              <input placeholder="Name" type="text" name="message" id="name" required >
+              <br>
+              <label for="adress">Your email:</label>
+              <input placeholder="Email address" type="email" name="_replyto" id="address" required>
+              <br>
               <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
             </fieldset>
+          </form> -->
+          <form action="https://formspree.io/f/mwkakoql" method="POST">
+            <label>
+              Your email:
+              <input type="email" name="_replyto">
+            </label>
+            <br>
+            <label>
+              Your message:
+              <textarea name="message"></textarea>
+            </label>
+
+            <button type="submit">Send</button>
           </form>
         </div>
 
