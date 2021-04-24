@@ -33,15 +33,16 @@ header{
   justify-content: center;
   text-align: center;
   background-color: rgba(182, 182, 182, 0.5);
+  font-size: 18pt;
 }
 
 .navigation ul li a:hover{
-  background-color: rgb(162, 175, 216);
+  background-color: rgb(122, 136, 180);
   color: whitesmoke;
 }
 
 .navigation ul li a.current_page{ 
-	background-color: rgb(162, 175, 216);
+	background-color: rgb(122, 136, 180);
   border: black;
   border-style: solid;
   color: white;
@@ -201,6 +202,10 @@ footer p{
   margin-top: 5px;
 }
 
+.email_container button[type="submit"]{
+ margin-top: 10px;
+}
+
 
 
 
@@ -209,7 +214,7 @@ footer p{
 nav{
   display:flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: none;
 }
 
 .navigation ul{
@@ -279,7 +284,7 @@ nav{
   grid-gap: 10px;
 }
 
-.self-image{
+.flip-card{
   grid-column: 1/2;
 }
 
@@ -324,7 +329,7 @@ nav{
 }
 
 .paint1{
-  width: 400px;
+  width: 60%;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -351,6 +356,8 @@ nav{
 #denso{
   display: none;
 }
+
+/* paralax */
 .bgimg1{
   position: relative;
   background-image: url("../images/denso.jpeg");
@@ -414,4 +421,55 @@ nav{
   
 }
 
+.flip-card{
+  background-color: transparent;
+  perspective: 1000px; 
+}
+
+.flip-card-inner{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+.flip-card:hover .flip-card-inner,
+.flip-card:focus-within .flip-card-inner,
+.flip-card:active .flip-card-inner,
+.flip-card:focus .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.self-image, .self-image-back{
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.self-image-back{
+  background-color: rgb(122, 136, 180);
+  color: white;
+  transform: rotateY(180deg);
+  width: 90%;
+  margin-left: 20px;
+  height: 300px;
+  font-size: 18pt;
+}
+}
+
+@media (prefers-reduced-motion){
+  .flip-card-inner{
+    transition: none;
+  }
+  
+  .bgimg1, .bgimg2{
+    background-attachment: local;
+  }
+}
+
+@media screen and (min-width: 1068px){
+nav{
+  justify-content: space-between;
+}
 }
